@@ -1,4 +1,4 @@
-# ARTHIV AI Interview Platform 🎙️
+# ARTHIV: The Future of AI Recruitment 🎙️
 
 > **Gemini 3 Hackathon Submission** - Powered by **Google Gemini 3** & **Google Agent Development Kit (ADK)**
 
@@ -6,107 +6,107 @@
 [![Built with ADK](https://img.shields.io/badge/Built%20with-Google%20ADK-green?style=for-the-badge&logo=google)](https://github.com/google/generative-ai-python)
 [![License](https://img.shields.io/badge/License-Apache%202.0-orange.svg?style=for-the-badge)](LICENSE)
 
-## 🚀 Overview
+---
 
-**ARTHIV** leverages the cutting-edge capabilities of **Google's Gemini 3 Multimodal Live API** to deliver a seamless, real-time, and human-like interview experience. Built on the **Google Agent Development Kit (ADK)**, it redefines recruitment with proactive, emotionally intelligent AI agents.
+## 📖 The Story
 
-## 🎮 Live Demo & Testing
+Hiring is broken. Candidates are anxious, recruiters are overwhelmed, and traditional "AI interviews" feel robotic and scripted.
 
-| Service | Link | Description |
-|---------|------|-------------|
-| **Frontend App** | [**Launch Demo** 🚀](https://gemini3-hackathon-frontend-851412038318.us-central1.run.app) | Live interview interface |
-| **Backend API** | [**API Docs**](https://gemini3-hackathon-backend-851412038318.us-central1.run.app/docs) | Swagger UI / ReDocs |
-| **Judges Guide** | [**Testing Instructions**](JUDGES_GUIDE.md) | Step-by-step verification guide |
+**Enter ARTHIV.**
 
-> **Note**: This hacked deployment uses a secure rate limiter (Max 8 sessions/device) to prevent abuse.
+We questioned: *What if an AI interviewer could actually "feel" the conversation? What if it could see your resume, understand your hesitation, and guide you like a real mentor?*
 
-## 💎 Gemini 3 & Google ADK Features
+Built on the groundbreaking **Google Gemini 3 Multimodal Live API**, ARTHIV isn't just a chatbot. It's a proactive, emotionally intelligent recruiter that conducts real-time, human-like voice interviews. It laughs, it listens, it probes deeper when you're vague, and it encourages you when you're stuck.
 
-### 🗣️ Native Audio & Voice (Gemini 3 Flash)
-- **Zero-Latency Conversations**: Uses Gemini's native audio-in/audio-out capabilities for natural, real-time dialogue.
-- **No External STT/TTS**: Direct end-to-end voice processing models for superior intonation and speed.
-
-### 🧠 Proactive Intelligence (Google ADK)
-- **Agentic Workflow**: The interviewer doesn't just wait for answers; it proactively guides the conversation.
-- **Dynamic Questioning**: Generates follow-up questions based on real-time context, not static scripts.
-
-### 🎭 Affective Dialog & Multimodal Analysis
-- **Emotional Intelligence**: Detects user sentiment and adjusts voice tone (empathetic, professional, encouraging).
-- **Vision Proctoring**: Real-time analysis of video frames to ensure integrity (detecting multiple faces, tab switching).
-- **Resume Analysis**: Multimodal understanding of PDF/Image resumes to tailor technical questions.
-
-### 💾 Efficient Context Management
-- **Context Window Compression**: ADK-driven sliding window memory to handle long interview sessions without losing critical context.
-
-## 🛡️ Security Features (Hackathon Special)
-
-### Secure Rate Limiting
-To ensure fair usage during the hackathon, we implemented a custom rate limiter:
-- **Max 8 Concurrent Sessions** per device.
-- **Device Fingerprinting**: SHA-256 hash of `IP Address` + `User-Agent`.
-- **Automatic Cleanup**: Stale sessions are removed instantly upon WebSocket disconnect.
-- **Stats API**: Public endpoint `/api/rate-limit/stats` to verify system load.
-
-## 📦 Project Structure
-
-```
-├── backend/
-│   ├── app/
-│   │   ├── main.py              # FastAPI app with Google ADK integration
-│   │   ├── rate_limiter.py      # Custom rate limiting middleware
-│   │   ├── agents/              # ADK Agent definitions
-│   │   │   ├── review_agent.py  # Gemini Resume Analyzer
-│   │   │   └── google_search_agent/ # Gemini Interviewer Agent
-│   ├── Dockerfile
-│   └── pyproject.toml
-│
-├── frontend/
-│   ├── app/                     # Next.js 14 App Router
-│   ├── components/              # React components (Shadcn UI)
-│   ├── lib/                     # Audio processing utilities
-│   └── deploy_hackathon.sh      # Cloud Run deployment script
-```
-
-## 🚀 Quick Start
-
-### Backend (Python + ADK)
-```bash
-cd backend
-pip install uv
-uv sync
-echo "GOOGLE_API_KEY=your_gemini_key_here" > app/.env
-uv run uvicorn app.main:app --host 0.0.0.0 --port 8080
-```
-
-### Frontend (Next.js)
-```bash
-cd frontend
-npm install
-echo "NEXT_PUBLIC_API_URL=http://localhost:8080" > .env.local
-npm run dev
-```
-
-## 🐳 Deployment (Google Cloud Run)
-
-We use a separate deployment pipeline for the hackathon to ensure stability and security.
-
-```bash
-# Deploy both services to Cloud Run
-./deploy_hackathon.sh
-```
-
-## 📡 API Endpoints
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/ws/{user_id}/{session_id}` | WebSocket | **Gemini Live Session** |
-| `/api/rate-limit/stats` | GET | View active session counts |
-| `/api/interview/plan-with-resume` | POST | Analyze resume with Gemini Vision |
-
-## 📄 License
-
-Apache License 2.0 - See [LICENSE](LICENSE) for details.
+This isn't just an interview; it's a conversation.
 
 ---
 
-**Built with ❤️ using Google Gemini 3** 🏆
+## 🎯 Use Cases
+
+### 1. The Empathetic Technical Screen
+Imagine a candidate struggling to explain a complex algorithm. Instead of failing them, ARTHIV notices their anxiety (via **Affective Dialog**) and says, *"Take a breath using the STAR method. Let's break it down together."*
+
+### 2. Fraud-Proof Remote Hiring
+With **Vision Proctoring**, ARTHIV "sees" the candidate's environment. If a candidate is constantly looking off-screen or multiple faces appear, ARTHIV flags it in real-time—ensuring integrity without invasive software.
+
+### 3. Personalized Deep Dives
+Upload a resume, and ARTHIV reads it instantly (**Multimodal Analysis**). It won't ask generic questions. It sees "Built an LLM agent" on your CV and asks, *"Tell me about the context window challenges you faced with that specific agent."*
+
+---
+
+## 🚀 Usage Guide
+
+1.  **Enter the Lobby**: Choose your target role (e.g., "Senior Python Dev") and a technical topic.
+2.  **Upload Context (Optional)**: Drop your resume (PDF/Image) for a tailored session.
+3.  **Start the Interview**:
+    *   **Speak Naturally**: No push-to-talk. Just talk. Interrupt it. It handles it.
+    *   **Get Feedback**: Receive specific, actionable feedback on your answers instantly.
+
+---
+
+## 🔗 Access The Live Demo
+
+Experience the future of hiring right now. No sign-up required (Open Access for Hackathon Judges & Testers).
+
+| Service | Link | Description |
+|---------|------|-------------|
+| **🎙️ Launch App** | [**👉 Click Here to Start Interview**](https://gemini3-hackathon-frontend-851412038318.us-central1.run.app) | The full frontend experience |
+| **🧪 Testers Guide** | [**Read Testing Instructions**](JUDGES_GUIDE.md) | Step-by-step guide for Judges |
+| **📡 API Docs** | [**View Backend Swagger**](https://gemini3-hackathon-backend-851412038318.us-central1.run.app/docs) | For developers verifying endpoints |
+
+> **⚠️ Hackathon Note**: To prevent abuse, we have implemented a **Rate Limiter**.
+> *   **Max Sessions**: 8 concurrent sessions per device/IP.
+> *   **Security**: Device fingerprinting is active.
+
+---
+
+## 🧪 Testers & Judges Guide (In-App)
+
+For the best evaluation experience, try these "Secret" interactions:
+
+1.  **The "Interruption" Test**: While ARTHIV is speaking, interrupt it mid-sentence with *"Wait, let me correct that."* -> Watch how seamlessly it stops and listens (Gemini 3 Native Audio).
+2.  **The "Visual" Test**: Turn on your camera. Hold up a phone or pen. Ask *"What am I holding?"* or just verify that it alerts on distraction.
+3.  **The "Stress" Test**: Sound confused or stressed in your voice. Listen to how ARTHIV shifts its tone to be more comforting.
+
+*For full step-by-step test cases, see the [**JUDGES_GUIDE.md**](JUDGES_GUIDE.md).*
+
+---
+
+## 💎 Under The Hood: Google Tech Stack
+
+We pushed the **Google Agent Development Kit (ADK)** to its limits:
+
+### 🗣️ Gemini 3 Flash (Native Audio)
+*   **Why**: We needed sub-500ms latency.
+*   **How**: Direct Audio-to-Audio streaming. No more Text-to-Speech lag.
+
+### 🧠 Google ADK (The Brain)
+*   **State Management**: Complex interview states (Introduction -> Technical -> Behavioral -> Closing) managed via ADK's robust state machine.
+*   **Tool Calling**: The agent autonomously decides when to "search" for a fact or "log" a proctoring violation.
+
+### 🛡️ Security Architecture
+*   **Custom Middleware**: Python FastAPI backend with a custom `rate_limiter.py` module using SHA-256 fingerprinting for secure, login-free access control.
+
+---
+
+## 📦 Project Structure
+
+```bash
+├── backend/ # Python FastAPI + Google ADK
+│   ├── agents/ # Gemini Interviewer & Resume Agents
+│   └── rate_limiter.py # Custom Security Middleware
+├── frontend/ # Next.js 14 + Shadcn UI
+│   ├── components/ # Reactive UI Components
+│   └── lib/audio/ # Audio Worklets for Low-Latency Streaming
+└── deploy_hackathon.sh # Cloud Run Deployment Pipeline
+```
+
+---
+
+## 📄 License & Credits
+
+*   **License**: Apache 2.0
+*   **Built for**: Google Gemini 3 Hackathon 2025
+
+**Made with ❤️ by Rythamo**
