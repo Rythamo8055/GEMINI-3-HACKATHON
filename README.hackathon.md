@@ -10,6 +10,16 @@
 
 **ARTHIV** leverages the cutting-edge capabilities of **Google's Gemini 3 Multimodal Live API** to deliver a seamless, real-time, and human-like interview experience. Built on the **Google Agent Development Kit (ADK)**, it redefines recruitment with proactive, emotionally intelligent AI agents.
 
+## 🎮 Live Demo & Testing
+
+| Service | Link | Description |
+|---------|------|-------------|
+| **Frontend App** | [**Launch Demo** 🚀](https://gemini3-hackathon-frontend-851412038318.us-central1.run.app) | Live interview interface |
+| **Backend API** | [**API Docs**](https://gemini3-hackathon-backend-851412038318.us-central1.run.app/docs) | Swagger UI / ReDocs |
+| **Judges Guide** | [**Testing Instructions**](JUDGES_GUIDE.md) | Step-by-step verification guide |
+
+> **Note**: This hacked deployment uses a secure rate limiter (Max 8 sessions/device) to prevent abuse.
+
 ## 💎 Gemini 3 & Google ADK Features
 
 ### 🗣️ Native Audio & Voice (Gemini 3 Flash)
